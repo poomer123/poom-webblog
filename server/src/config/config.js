@@ -7,7 +7,7 @@ module.exports = {
         options: {
             dialect: 'sqlite',
             host: 'localhost',
-            storage: './poomdb.sqlite'
+            storage: './poom-webblog-db.sqlite'
         }
     }
 }
