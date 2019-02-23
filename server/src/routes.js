@@ -4,7 +4,7 @@ module.exports = (app) => {
     // user section
     // ============
     // create
-    app.post('/user', 
+    app.post('/user',
         UserController.create
     )
 

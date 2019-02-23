@@ -6,10 +6,11 @@ const { sequelize } = require('./models')
 const config = require('./config/config')
 const app = express()
 
-let port = process.env.PORT || config.port
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
+
+
+let port = process.env.PORT || config.port
 
 require('./routes')(app)
 
