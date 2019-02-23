@@ -3,29 +3,58 @@ const UserController = require('./controllers/UserController')
 module.exports = (app) => {
     // user section
     // ============
-    // create
+    // create user
     app.post('/user',
         UserController.create
     )
 
-    // update
+    // update user
     app.put('/user/:userId', 
         UserController.put
     )
 
-    // delete
+    // delete user
     app.delete('/user/:userId', 
         UserController.remove
     )
 
-    // view
+    // view user
     app.get('/users', 
         UserController.index
     )
 
-    // view by Id
+    // view user by Id
     app.get('/user/:userId', 
         UserController.show
     )
 
+
+
+
+    // category section
+    // ============
+    // create category
+    app.post('/category',
+        UserController.create
+    )
+
+    // update category
+    app.put('/category/:categoryId', 
+        UserController.put
+    )
+
+    // delete category
+    app.delete('/category/:categoryId', 
+        UserController.remove
+    )
+
+    // view category
+    app.get('/categories', 
+        UserController.index
+    )
+
+    // view category by Id
+    app.get('/category/:categoryId', 
+        UserController.show
+    )
 }
