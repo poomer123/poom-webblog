@@ -8,6 +8,12 @@ import UserCreate from '@/components/Users/CreateUser'
 import UserEdit from '@/components/Users/EditUser'
 import UserView from '@/components/Users/ViewUser'
 
+// Category
+import Categories from '@/components/Category/Index'
+import CategoryCreate from '@/components/Category/CreateCategory'
+import CategoryEdit from '@/components/Category/EditCategory'
+import CategoryView from '@/components/Category/ViewCategory'
+
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +45,28 @@ export default new Router({
             path: '/user/view',
             name: 'user-view',
             component: UserView
+        },
+
+        // category
+        {
+            path: '/categories',
+            name: 'categories',
+            component: Categories
+        },
+        {
+            path: '/category/create',
+            name: 'category-create',
+            component: CategoryCreate
+        },
+        {
+            path: '/category/edit',
+            name: 'category-edit',
+            component: CategoryEdit
+        },
+        {
+            path: '/category/view',
+            name: 'category-view',
+            component: CategoryView
         },
     ]
 })
