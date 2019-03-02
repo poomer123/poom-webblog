@@ -6,6 +6,7 @@
                 <li><router-link :to="{name: 'home'}">Home</router-link></li>
                 <li><router-link :to="{name: 'users'}">User</router-link></li>
                 <li><router-link :to="{name: 'categories'}">Category</router-link></li>
+                <li><router-link :to="{name: 'blogs'}">Blogs</router-link></li>
             </ul>
         </Nav>
     </div>

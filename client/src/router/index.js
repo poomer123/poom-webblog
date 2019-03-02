@@ -14,6 +14,12 @@ import CategoryCreate from '@/components/Category/CreateCategory'
 import CategoryEdit from '@/components/Category/EditCategory'
 import CategoryView from '@/components/Category/ViewCategory'
 
+// Blog Post
+import Blogs from '@/components/Blogs/Index'
+import BlogCreate from '@/components/Blogs/CreateBlog'
+import BlogEdit from '@/components/Blogs/EditBlog'
+import BlogView from '@/components/Blogs/ViewBlog'
+
 Vue.use(Router)
 
 export default new Router({
@@ -67,6 +73,28 @@ export default new Router({
             path: '/category/:categoryId/view',
             name: 'category-view',
             component: CategoryView
+        },
+
+        // blog post
+        {
+            path: '/blogs',
+            name: 'blogs',
+            component: Blogs
+        },
+        {
+            path: '/blog/create',
+            name: 'blog-create',
+            component: BlogCreate
+        },
+        {
+            path: '/blog/:blogId/edit',
+            name: 'blog-edit',
+            component: BlogEdit
+        },
+        {
+            path: '/blog/:blogId/view',
+            name: 'blog-view',
+            component: BlogView
         },
     ]
 })
