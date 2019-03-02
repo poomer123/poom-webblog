@@ -31,6 +31,9 @@ export default {
         async editUser() {
             try {
                 await UserService.edit(this.user)
+                this.$router.push({
+                    name: 'users'
+                })
             } catch (err) {
                 console.log(err)
             }
