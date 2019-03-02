@@ -7,6 +7,7 @@
             <p><strong>Description : </strong> {{category.description}}</p>
             <p><strong>Author : </strong> {{category.author_id}}</p>
             <button v-on:click="navigateTo('/category/'+category.id+'/view/')">View Category</button>
+            <button v-on:click="deleteCategory(category)">Delete</button>
             <hr />
         </div>
     </div>
@@ -24,6 +25,17 @@ export default {
     methods: {
         navigateTo(route){
             this.$router.push(route)
+        },
+        async deleteCategory(category) {
+            try {
+                await CategoryService.delete(category)
+                this.refreshData()
+            } catch (err) {
+                console.log(err)
+            }   
+        },
+        async refreshData() {
+            this.categories = (await CategoryService.index()).data
         }
     },
     async mounted() {
