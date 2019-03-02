@@ -37,12 +37,12 @@ export default new Router({
             component: UserCreate
         },
         {
-            path: '/user/edit',
+            path: '/user/:userId/edit',
             name: 'user-edit',
             component: UserEdit
         },
         {
-            path: '/user/view',
+            path: '/user/:userId/view/',
             name: 'user-view',
             component: UserView
         },
