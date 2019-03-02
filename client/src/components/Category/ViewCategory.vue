@@ -9,6 +9,7 @@
             <p><strong>Author ID : </strong>{{category.author_id}}</p>
             <p><strong>Create At : </strong>{{category.createdAt}}</p>
             <p><strong>Updated At : </strong>{{category.updatedAt}}</p>
+            <p><a href="#" v-on:click.prevent="navigateTo('/category/'+category.id+'/edit')">Edit</a></p>
         </div>
     </div>
     <div v-else>
