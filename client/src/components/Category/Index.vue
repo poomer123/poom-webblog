@@ -6,6 +6,7 @@
             <p><strong>Title : </strong> {{category.title}}</p>
             <p><strong>Description : </strong> {{category.description}}</p>
             <p><strong>Author : </strong> {{category.author_id}}</p>
+            <button v-on:click="navigateTo('/category/'+category.id+'/view/')">View Category</button>
             <hr />
         </div>
     </div>

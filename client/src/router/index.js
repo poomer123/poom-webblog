@@ -59,12 +59,12 @@ export default new Router({
             component: CategoryCreate
         },
         {
-            path: '/category/edit',
+            path: '/category/:categoryId/edit',
             name: 'category-edit',
             component: CategoryEdit
         },
         {
-            path: '/category/view',
+            path: '/category/:categoryId/view',
             name: 'category-view',
             component: CategoryView
         },
