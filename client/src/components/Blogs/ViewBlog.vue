@@ -10,6 +10,7 @@
             <p><strong>Author Id : </strong>{{blog.author_id}}</p>
             <p><strong>Created At : </strong>{{blog.createdAt}}</p>
             <p><strong>Updated At : </strong>{{blog.updatedAt}}</p>
+            <p><a href="#" v-on:click.prevent="navigateTo('/blog/'+blog.id+'/edit')">Edit</a></p>
         </div>
         <div v-else>
             <p>Not Found Blog</p>
@@ -23,6 +24,11 @@ export default {
     data() {
         return {
             blog: null
+        }
+    },
+    methods: {
+        navigateTo(route){
+            this.$router.push(route)
         }
     },
     async mounted() {
