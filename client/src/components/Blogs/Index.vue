@@ -11,6 +11,7 @@
             <p><strong>tatus Id : </strong> {{blog.status_id || '-'}}</p>
             <p><strong>createdAt : </strong> {{blog.createdAt || '-'}}</p>
             <button v-on:click="navigateTo('/blog/'+blog.id+'/view/')">View User</button>
+            <button v-on:click="deleteBlog(blog)">Delete</button>
             <hr />
         </div>
     </div>
@@ -29,6 +30,17 @@ export default {
     methods: {
         navigateTo(route){
             this.$router.push(route)
+        },
+        async deleteBlog(blog) {
+            try {
+                await BlogService.delete(blog)
+                this.refreshData()
+            } catch (err) {
+                console.log(err)
+            }   
+        },
+        async refreshData() {
+            this.blogs = (await BlogService.index()).data
         }
     },
     async mounted() {
