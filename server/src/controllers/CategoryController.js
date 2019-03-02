@@ -30,7 +30,7 @@ module.exports = {
         try {
             await Category.update(req.body, {
                 where: {
-                    id: req.params.userId
+                    id: req.params.categoryId
                 }
             })
             res.send(req.body)
@@ -50,7 +50,7 @@ module.exports = {
                 }
             })
 
-            if(!categoryId){
+            if(!category){
                 return res.status(403).send({
                     error: 'The category information was incorrect'
                 })
