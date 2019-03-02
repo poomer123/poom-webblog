@@ -1,5 +1,6 @@
 const UserController = require('./controllers/UserController')
 const CategoryController = require('./controllers/CategoryController')
+const PostController = require('./controllers/PostController')
 
 module.exports = (app) => {
     // user section
@@ -58,4 +59,36 @@ module.exports = (app) => {
     app.get('/category/:categoryId', 
         CategoryController.show
     )
+
+
+
+
+    // post section
+    // ============
+    // create post
+    app.post('/post',
+        PostController.create
+    )
+
+    // update post
+    app.put('/post/:postId', 
+        PostController.put
+    )
+
+    // delete post
+    app.delete('/post/:postId', 
+        PostController.remove
+    )
+
+    // view post
+    app.get('/posts', 
+        PostController.index
+    )
+
+    // view post by Id
+    app.get('/post/:postId', 
+        PostController.show
+    )
+
+
 }
