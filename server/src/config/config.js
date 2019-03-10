@@ -9,5 +9,8 @@ module.exports = {
             host: 'localhost',
             storage: './poom-webblog-db.sqlite'
         }
+    },
+    authentication: {
+        jwtSecret: 'secret'
     }
 }
