@@ -1,6 +1,8 @@
 const UserController = require('./controllers/UserController')
 const CategoryController = require('./controllers/CategoryController')
 const PostController = require('./controllers/PostController')
+const UserAuthenController = require('./controllers/UserAuthenController')
+const isAuthenController = require('./policie/isAuthenController')
 
 module.exports = (app) => {
     // user section
@@ -21,7 +23,8 @@ module.exports = (app) => {
     )
 
     // view user
-    app.get('/users', 
+    app.get('/users',
+        isAuthenController, 
         UserController.index
     )
 
@@ -30,6 +33,15 @@ module.exports = (app) => {
         UserController.show
     )
 
+    // user register
+    app.post('/register',
+        UserAuthenController.register
+    )
+
+    // user login
+    app.post('/login',
+        UserAuthenController.login
+    )
 
 
 

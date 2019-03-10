@@ -7,6 +7,7 @@ import Users from '@/components/Users/Index'
 import UserCreate from '@/components/Users/CreateUser'
 import UserEdit from '@/components/Users/EditUser'
 import UserView from '@/components/Users/ViewUser'
+import UserLogin from '@/components/Users/LoginUser'
 
 // Category
 import Categories from '@/components/Category/Index'
@@ -25,6 +26,14 @@ Vue.use(Router)
 export default new Router({
     mode: 'history',
     routes: [
+        // authentication
+        {
+            path: '/login',
+            name: 'login',
+            component: UserLogin
+        },
+
+        // home
         {
             path: '/home',
             name: 'home',
@@ -52,6 +61,7 @@ export default new Router({
             name: 'user-view',
             component: UserView
         },
+
 
         // category
         {

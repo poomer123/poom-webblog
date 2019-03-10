@@ -14,6 +14,7 @@ app.use(cors())
 
 let port = process.env.PORT || config.port
 
+require('./userPassport')
 require('./routes')(app)
 
 app.get('/status', (req, res) => {
