@@ -17,6 +17,8 @@ let port = process.env.PORT || config.port
 require('./userPassport')
 require('./routes')(app)
 
+app.use('/assets', express.static('public'))
+
 app.get('/status', (req, res) => {
     res.send('hello nodeJs server')
 })

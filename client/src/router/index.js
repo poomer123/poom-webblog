@@ -21,11 +21,22 @@ import BlogCreate from '@/components/Blogs/CreateBlog'
 import BlogEdit from '@/components/Blogs/EditBlog'
 import BlogView from '@/components/Blogs/ViewBlog'
 
+// upload
+import Upload from '@/components/Utils/Upload'
+
+
 Vue.use(Router)
 
 export default new Router({
     mode: 'history',
     routes: [
+        // upload
+        {
+            path: '/upload',
+            name: 'upload',
+            component: Upload
+        },
+
         // authentication
         {
             path: '/login',

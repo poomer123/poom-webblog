@@ -5,7 +5,8 @@
 
         <div v-for="blog in blogs" :key="blog.id">
             <p><strong>Title : </strong> {{blog.title || '-'}}</p>
-            <p><strong>Description : </strong> {{blog.description || '-'}}</p>
+            <!-- <p><strong>Description : </strong> {{blog.description || '-'}}</p> -->
+            <div v-html="blog.description.slice(0,200) + '...'"></div>
             <p><strong>Category Id : </strong> {{blog.category_id || '-'}}</p>
             <p><strong>Author Id : </strong> {{blog.author_id || '-'}}</p>
             <p><strong>tatus Id : </strong> {{blog.status_id || '-'}}</p>

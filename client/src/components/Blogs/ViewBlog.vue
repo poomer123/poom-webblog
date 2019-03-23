@@ -4,7 +4,10 @@
         <div v-if="blog">
             <p><strong>id : </strong>{{blog.id}}</p>
             <p><strong>Title : </strong>{{blog.title}}</p>
-            <p><strong>Description : </strong>{{blog.description}}</p>
+            <div>
+                <strong>Description : </strong>
+                <div v-html="blog.description"></div>
+            </div>
             <p><strong>Category Id : </strong>{{blog.category_id}}</p>
             <p><strong>Status Id : </strong>{{blog.status_id}}</p>
             <p><strong>Author Id : </strong>{{blog.author_id}}</p>
